@@ -10,9 +10,9 @@ import process_stylization_ade20k_ssn
 from torch import nn
 from photo_wct import PhotoWCT
 from segmentation.dataset import round2nearest_multiple
-from segmentation.models import ModelBuilder, SegmentationModule
-from lib.nn import user_scattered_collate, async_copy_to
-from lib.utils import as_numpy, mark_volatile
+from segmentation.mit_semseg.models import ModelBuilder, SegmentationModule
+from segmentation.mit_semseg.lib.nn import user_scattered_collate, async_copy_to
+from segmentation.lib.utils import as_numpy, mark_volatile
 from scipy.misc import imread, imresize
 import cv2
 from torchvision import transforms
