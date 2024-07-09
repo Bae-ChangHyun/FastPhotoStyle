@@ -18,6 +18,7 @@ Copyright (C) 2018 NVIDIA Corporation.  All rights reserved.
  
  | Date     | News |
  |----------|--------------|
+ |2024-07-09| Fix docker setting / Add cpu option(cuda=0) for example / Change deprecated repo,link,path on code to run. |  
  |2018-07-25| Migrate to pytorch 0.4.0. For pytorch 0.3.0 user, check out [FastPhotoStyle for pytorch 0.3.0](https://github.com/NVIDIA/FastPhotoStyle/releases/tag/f33e07f). |
  |          | Add a [tutorial](TUTORIAL.md) showing 3 ways of using the FastPhotoStyle algorithm.|
  |2018-07-10| Our paper is accepted by the ECCV 2018 conference!!! | 
