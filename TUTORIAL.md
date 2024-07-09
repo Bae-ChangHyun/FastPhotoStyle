@@ -34,7 +34,7 @@ The output is a photorealistic image as it were captured by a camera.
   - export ANACONDA=PATH-TO-YOUR-ANACONDA-LIBRARY
   - export CUDA_PATH=/usr/local/cuda
   - export PATH=${ANACONDA}/bin:${CUDA_PATH}/bin:$PATH
-  - export LD_LIBRARY_PATH=${ANACONDA}/lib:${CUDA_PATH}/bin64:$LD_LIBRARY_PATH
+  - export LD_LIBRARY_PATH=${ANACONDA}/lib:${CUDA_PATH}/lib64:$LD_LIBRARY_PATH
   - export C_INCLUDE_PATH=${CUDA_PATH}/include
 - System package
   - `sudo apt-get install -y axel imagemagick` (Only used for demo)  
@@ -44,6 +44,7 @@ The output is a photorealistic image as it were captured by a camera.
   - `pip install -U setuptools`
   - `pip install cupy`
   - `pip install pynvrtc`
+  - `pip install yacs`
   - `conda install -c menpo opencv3` (OpenCV is only required if you want to use the approximate version of the photo smoothing step.)
 
 ### Examples
@@ -136,7 +137,7 @@ In this example, we will show how to use segmentation masks of content and style
 We will use the segmentation network provided from [CSAILVision/semantic-segmentation-pytorch](https://github.com/CSAILVision/semantic-segmentation-pytorch) in this example. 
 To setup up the segmentation network, do the following steps:
 - Clone the CSAIL segmentation network from this fork of [CSAILVision/semantic-segmentation-pytorch](https://github.com/CSAILVision/semantic-segmentation-pytorch) using the following command 
-  `git clone https://github.com/mingyuliutw/semantic-segmentation-pytorch segmentation`
+  `git clone -b develop https://github.com/Bae-ChangHyun/semantic-segmentation-pytorch.git` (Chenck running on 24.07.09)
 - Run the demo code in [CSAILVision/semantic-segmentation-pytorch](https://github.com/CSAILVision/semantic-segmentation-pytorch) to download the network and make sure the environment is set up properly. 
   - `cd segmentation` 
   - `./demo_test.sh`
@@ -164,8 +165,8 @@ To setup up the segmentation network, do the following steps:
 - To run the fast version of the demo, you can simply type `./demo_example3.sh` or run.
 - Create image and output folders and make sure nothing is inside the folders. `mkdir images && mkdir results`
 - Go to the image folder: `cd images`
-- Download content image 3: `axel -n 1 https://pre00.deviantart.net/f1a6/th/pre/i/2010/019/0/e/country_road_hdr_by_mirre89.jpg --output=content3.png`
-- Download style image 3: `axel -n 1 https://nerdist.com/wp-content/uploads/2017/11/Stranger_Things_S2_news_Images_V03-1024x481.jpg --output=style3.png;`
+- Download content image 3: `wget https://pre00.deviantart.net/f1a6/th/pre/i/2010/019/0/e/country_road_hdr_by_mirre89.jpg -O content3.png`
+- Download style image 3: `wget https://inchiostro.unipv.it/wp-content/uploads/2017/10/Stranger_Things_S2_news_Images_V03-1024x481.jpg -O style3.png`
 - These images are huge. We need to resize them first. Run
   - `convert -resize 50% content3.png content3.png`
   - `convert -resize 50% style3.png style3.png`
