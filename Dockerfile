@@ -37,4 +37,4 @@ RUN pip install scikit-umfpack
 RUN pip install cupy-cuda91
 RUN pip install pynvrtc
 RUN conda install -y numpy=1.14.5 scipy
-RUN pip install yak
+RUN pip install yacs
