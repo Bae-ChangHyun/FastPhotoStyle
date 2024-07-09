@@ -4,6 +4,9 @@
 
 ## FastPhotoStyle
 
+### Update
+[24.07.09] Update docker-based configuration setting and verify that Example 1, Example 3 running on [tutorial](TUTORIAL.md) works well
+
 ### License
 Copyright (C) 2018 NVIDIA Corporation.  All rights reserved.
 [Licensed under the CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
