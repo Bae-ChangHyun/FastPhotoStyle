@@ -187,7 +187,7 @@ To setup up the segmentation network, do the following steps:
 
 | Input Style Photo | Input Content Photo | Output Stylization Result |
 |-------------------|---------------------|---------------------------|
-|<img src="https://nerdist.com/wp-content/uploads/2017/11/Stranger_Things_S2_news_Images_V03-1024x481.jpg" height="200" title="content 3"> | <img src="https://pre00.deviantart.net/f1a6/th/pre/i/2010/019/0/e/country_road_hdr_by_mirre89.jpg" height="200" title="content 3"> |<img src="https://raw.githubusercontent.com/NVIDIA/FastPhotoStyle/master/demo_result_example3.png" height="200" title="demo_result_example3.png"> |
+|<img src="https://inchiostro.unipv.it/wp-content/uploads/2017/10/Stranger_Things_S2_news_Images_V03-1024x481.jpg" height="200" title="content 3"> | <img src="https://pre00.deviantart.net/f1a6/th/pre/i/2010/019/0/e/country_road_hdr_by_mirre89.jpg" height="200" title="content 3"> |<img src="https://raw.githubusercontent.com/NVIDIA/FastPhotoStyle/master/demo_result_example3.png" height="200" title="demo_result_example3.png"> |
 
 - We can check out the segmentation results in the `results` folder.
 
@@ -202,9 +202,9 @@ We provide a docker image for testing the code.
 
   1. Install docker-ce. Follow the instruction in the [Docker page](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
   2. Install nvidia-docker. Follow the instruction in the [NVIDIA-DOCKER README page](https://github.com/NVIDIA/nvidia-docker).
-  3. Build the docker image `docker build -t your-docker-image:v1.0 .`
-  4. Run an interactive session `docker run -v YOUR_PATH:YOUR_PATH --runtime=nvidia -i -t your-docker-image:v1.0 /bin/bash`
-  5. `cd YOUR_PATH`
+  3. Build the docker image `docker build -t {IAMGE_NAME}:{TAG} .`
+  4. Run an interactive session `docker run --name {CONTAINER_NAME} -v {LOCAL_DIR}:{CONTAINER_DIR} --runtime=nvidia -i -t {IMAGE_NAME}:{TAG} /bin/bash`
+  5. `cd {CONTAINER_DIR}`
   6. `./demo_example1.sh`
 
 ## Acknowledgement
