@@ -12,7 +12,7 @@ from photo_wct import PhotoWCT
 from segmentation.mit_semseg.dataset import round2nearest_multiple
 from segmentation.mit_semseg.models import ModelBuilder, SegmentationModule
 from segmentation.mit_semseg.lib.nn import user_scattered_collate, async_copy_to
-from segmentation.lib.utils import as_numpy, mark_volatile
+from segmentation.mit_semseg.lib.utils import as_numpy, mark_volatile
 from scipy.misc import imread, imresize
 import cv2
 from torchvision import transforms
