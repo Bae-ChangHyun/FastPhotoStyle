@@ -53,8 +53,8 @@ segReMapping = process_stylization_ade20k_ssn.SegReMapping(args.label_mapping)
 SEG_NET_PATH = 'segmentation'
 args.weights_encoder = os.path.join(SEG_NET_PATH,args.model_path, 'encoder' + args.suffix)
 args.weights_decoder = os.path.join(SEG_NET_PATH,args.model_path, 'decoder' + args.suffix)
-args.arch_encoder = 'resnet50_dilated8'
-args.arch_decoder = 'ppm_bilinear_deepsup'
+args.arch_encoder = 'resnet50dilated'
+args.arch_decoder = 'ppm_deepsup'
 args.fc_dim = 2048
 
 # Load semantic segmentation network module
