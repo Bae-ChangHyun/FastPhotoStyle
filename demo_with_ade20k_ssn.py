@@ -63,7 +63,7 @@ net_encoder = builder.build_encoder(arch=args.arch_encoder, fc_dim=args.fc_dim, 
 net_decoder = builder.build_decoder(arch=args.arch_decoder, fc_dim=args.fc_dim, num_class=args.num_class, weights=args.weights_decoder, use_softmax=True)
 crit = nn.NLLLoss(ignore_index=-1)
 segmentation_module = SegmentationModule(net_encoder, net_decoder, crit)
-segmentation_module.cuda()
+if(args.cuda):segmentation_module.cuda()
 segmentation_module.eval()
 transform = transforms.Compose([transforms.Normalize(mean=[102.9801, 115.9465, 122.7717], std=[1., 1., 1.])])
 
@@ -104,7 +104,7 @@ def segment_this_img(f):
         pred = torch.zeros(1, args.num_class, segSize[0], segSize[1])
         for timg in img_resized_list:
             feed_dict = dict()
-            if(args.cuda)feed_dict['img_data'] = timg.cuda()
+            if(args.cuda):feed_dict['img_data'] = timg.cuda()
             else:feed_dict['img_data'] = timg
             if(args.cuda):feed_dict = async_copy_to(feed_dict, args.gpu_id)
             # forward pass
@@ -127,7 +127,7 @@ process_stylization_ade20k_ssn.stylization(
     content_seg_path=args.content_seg_path,
     style_seg_path=args.style_seg_path,
     output_image_path=args.output_image_path,
-    cuda=True,
+    cuda=args.cuda:,
     save_intermediate=args.save_intermediate,
     no_post=args.no_post,
     label_remapping=segReMapping,
