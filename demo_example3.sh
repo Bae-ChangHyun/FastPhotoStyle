@@ -11,4 +11,4 @@ wget https://inchiostro.unipv.it/wp-content/uploads/2017/10/Stranger_Things_S2_n
 convert -resize 50% content3.png content3.png;
 convert -resize 50% style3.png style3.png;
 cd ..;
-python demo_with_ade20k_ssn.py --cuda 0;
+python demo_with_ade20k_ssn.py --cuda 0 --output_visualization;
