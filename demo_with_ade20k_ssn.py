@@ -127,7 +127,7 @@ process_stylization_ade20k_ssn.stylization(
     content_seg_path=args.content_seg_path,
     style_seg_path=args.style_seg_path,
     output_image_path=args.output_image_path,
-    cuda=args.cuda:,
+    cuda=args.cuda,
     save_intermediate=args.save_intermediate,
     no_post=args.no_post,
     label_remapping=segReMapping,
