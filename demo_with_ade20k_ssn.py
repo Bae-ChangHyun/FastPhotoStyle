@@ -104,8 +104,9 @@ def segment_this_img(f):
         pred = torch.zeros(1, args.num_class, segSize[0], segSize[1])
         for timg in img_resized_list:
             feed_dict = dict()
-            feed_dict['img_data'] = timg.cuda()
-            feed_dict = async_copy_to(feed_dict, args.gpu_id)
+            if(args.cuda)feed_dict['img_data'] = timg.cuda()
+            else:feed_dict['img_data'] = timg
+            if(args.cuda):feed_dict = async_copy_to(feed_dict, args.gpu_id)
             # forward pass
             pred_tmp = segmentation_module(feed_dict, segSize=segSize)
             pred = pred + pred_tmp.cpu() / len(args.imgSize)
