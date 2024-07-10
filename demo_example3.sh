@@ -3,6 +3,8 @@ rm images/content3.png -rf;
 rm images/style3.png -rf;
 rm results/content3_seg.pgm -rf;
 rm results/style3_seg.pgm -rf;
+rm results/content3_seg.pgm.visualization.jpg -rf;
+rm results/style3_seg.pgm.visualization.jpg -rf;
 rm results/stylization_with_auto_segmentation.png -rf;
 export PYTHONPATH=$PYTHONPATH:segmentation
 cd images;
